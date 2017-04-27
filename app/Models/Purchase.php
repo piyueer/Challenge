@@ -15,6 +15,6 @@ class Purchase extends Model
 
     public function offering()
     {
-        return $this->belongsTo('App\Models\offering');
+        return $this->belongsTo('App\Models\offering', 'id', 'id');
     }
 }
