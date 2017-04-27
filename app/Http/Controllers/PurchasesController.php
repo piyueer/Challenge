@@ -11,14 +11,14 @@ class PurchasesController extends Controller
     {
         $offerings = Offering::all()->toArray();
 
-        return json_encode(['offering' => $offerings]);
+        return json_encode(['offerings' => $offerings]);
     }
 
     public function getPurchases()
     {
         $purchases = Purchase::with(['offering'])->get()->toArray();
 
-        return json_encode(['purchase' => $purchases]);
+        return json_encode(['purchases' => $purchases]);
     }
 
     public function postPurchases(Request $request)
@@ -26,8 +26,8 @@ class PurchasesController extends Controller
         $parameters = $request->all();
 
         Purchase::insert([
-            'customer_name' => $parameters['customer_name'],
-            'offering_id' => $parameters['offering_id'],
+            'customerName' => $parameters['customerName'],
+            'offeringID' => $parameters['offeringID'],
             'quantity' => $parameters['quantity']
         ]);
 
