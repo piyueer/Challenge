@@ -12,4 +12,9 @@ class Purchase extends Model
      * @var string
      */
     protected $table = 'purchase';
+
+    public function offering()
+    {
+        return $this->belongsTo('App\Models\offering');
+    }
 }
