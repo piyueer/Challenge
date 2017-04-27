@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/offerings', ['uses' => 'PurchasesController@getAllOfferings']);
+
+Route::get('/purchases', ['uses' => 'PurchasesController@getPurchases']);
+
+Route::post('/purchases', ['uses' => 'PurchasesController@postPurchases', 'as' => 'purchase']);
