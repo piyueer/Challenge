@@ -1,0 +1,22 @@
+<div class="container">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Purchase ID</th>
+				<th>Offering title</th>
+				<th>Quantity</th>
+				<th>Unit price</th>
+				<th>Total</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in main.data">
+				<td>{{item.id}}</td>
+				<td>{{item.offering.title}}</td>
+				<td>{{item.quantity}}</td>
+				<td>{{item.offering.price}}</td>
+				<td>{{item.quantity*item.offering.price}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
